@@ -1,2 +1,0 @@
-# Smart financial crime detection
-
