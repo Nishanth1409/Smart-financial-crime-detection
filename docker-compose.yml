@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./backend
+    container_name: fraud-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/data
+    environment:
+      - MODEL_PATH=/data/fraud_detection_pipeline.pkl
+      - DATA_PATH=/data/AIML Dataset_with_person_name.csv
+      # Optional: use a sample for faster dashboard (e.g. 100000); 0 = load full dataset
+      - SAMPLE_ROWS=0
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: fraud-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped

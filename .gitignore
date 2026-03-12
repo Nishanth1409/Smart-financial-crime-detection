@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Node / frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+frontend/dist/
+
+# IDE and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ML / data — large or regeneratable; do not commit
+*.pkl
+AIML Dataset*.csv
+# sample_datasets/ — small; keep committed for demos
+
+# Logs and coverage
+*.log
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
