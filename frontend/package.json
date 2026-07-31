@@ -17,5 +17,10 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
     "vite": "^5.1.0"
+  },
+  "overrides": {
+    "brace-expansion": "^2.0.2",
+    "postcss": "^8.5.18",
+    "js-yaml": "^4.3.0"
   }
 }
